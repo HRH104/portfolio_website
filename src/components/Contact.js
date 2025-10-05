@@ -1,34 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/Contact.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
-    })
-    .then(() => {
-      alert('Thank you for your message! I\'ll get back to you soon.');
-      setFormData({ name: '', email: '', message: '' });
-    })
-    .catch(() => alert('Error sending message. Please try again.'));
-  };
 
   return (
     <section id="contact" className="section contact">
@@ -76,40 +49,21 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          <form className="contact-form" onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact" />
-            <div className="form-group">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                rows="6"
-                value={formData.message}
-                onChange={handleChange}
-                required
-              ></textarea>
-            </div>
-            <button type="submit" className="btn">Send Message</button>
-          </form>
+          <div className="contact-form">
+            <iframe 
+              src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__iLuP2NUNEVNSVNZV05UUzM4OFhYNUcxQkUyTERMRy4u&embed=true" 
+              width="100%" 
+              height="500" 
+              frameBorder="0" 
+              marginHeight="0" 
+              marginWidth="0"
+              title="Contact Form"
+              style={{border: 'none', maxWidth: '100%', maxHeight: '100vh'}}
+              allowFullScreen
+            >
+              Loading…
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
