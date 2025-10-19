@@ -127,15 +127,43 @@
 @media (max-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
     text-align: center;
   }
-  
+
   .hero-text h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
-  
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
   .hero-buttons {
     justify-content: center;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+    margin: 20px 0;
+  }
+
+  .code-block {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
   }
 }

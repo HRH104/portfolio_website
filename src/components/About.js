@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/About.css';
+import profileImage from './profile.jpeg';
 
 const About = () => {
   return (
@@ -20,7 +21,7 @@ const About = () => {
             </p>
             <div className="stats">
               <div className="stat">
-                <h3>50+</h3>
+                <h3>15+</h3>
                 <p>Projects Completed</p>
               </div>
               <div className="stat">
@@ -34,9 +35,7 @@ const About = () => {
             </div>
           </div>
           <div className="about-image">
-            <div className="image-placeholder">
-              <i className="fas fa-user-circle"></i>
-            </div>
+            <img src={profileImage} alt="Your Name" className="profile-image" />
           </div>
         </div>
       </div>

@@ -1,0 +1,5 @@
+- [x] Move toggle button to far right and change to hamburger icon
+- [x] Update CSS for hamburger animation
+- [x] Test the hamburger toggle functionality
+- [x] Adjust dropdown position to be below the name instead of far right
+- [x] Change to inline expansion within header instead of separate box
